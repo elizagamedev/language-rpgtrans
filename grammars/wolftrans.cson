@@ -1,0 +1,30 @@
+name: 'Wolf Trans'
+scopeName: 'source.wolftrans'
+firstLineMatch: '^\\s*?>\\s*?WOLF TRANS PATCH FILE VERSION \\d+\\.\\d+'
+
+patterns: [
+  {
+    match: '^\\s*?>\\s*?WOLF TRANS PATCH FILE VERSION \\d+\\.\\d+'
+    name: 'keyword.control.rpgtrans.version'
+  }
+  {
+    match: '(?<!\\\\)#.*$'
+    name: 'comment.line.number-sign.rpgtrans'
+  }
+  {
+    match: '^\\s*?>\\s*?BEGIN STRING'
+    name: 'keyword.rpgtrans.start-block'
+  }
+  {
+    match: '^\\s*?>\\s*?END STRING'
+    name: 'keyword.rpgtrans.end-block'
+  }
+  {
+    begin: '^(\\s*?>\\s*?CONTEXT)\s*?(.*?)\\s*?(<\\s*?.*?)?$'
+    captures:
+      1: name: 'keyword.rpgtrans.context'
+      2: name: 'support.type.rpgtrans'
+      3: name: 'markup.bold.rpgtrans'
+    end: '$'
+  }
+]

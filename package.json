@@ -1,0 +1,11 @@
+{
+  "name": "language-rpgtrans",
+  "version": "1.0.0",
+  "description": "RPG Maker Trans and Wolf Trans language support in Atom",
+  "engines": {
+    "atom": "*",
+    "node": "*"
+  },
+  "license": "WTFPL",
+  "repository": "https://github.com/mathewv/language-rpgtrans"
+}
